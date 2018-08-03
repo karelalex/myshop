@@ -3,12 +3,77 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <filter>
+        <filter-name>Filter</filter-name>
+        <filter-class>ru.naztrans.elcom.filter.Filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>ru.naztrans.elcom.servlets.MainServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CatalogServlet</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.CatalogServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Error404</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.Error404</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Error403</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.Error403</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.ProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.OrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>ru.naztrans.elcom.servlets.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Error403</servlet-name>
+        <url-pattern>/error403</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Error404</servlet-name>
+        <url-pattern>/error404</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/main</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogServlet</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404</location>
+
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error403</location>
+    </error-page>
 </web-app>
