@@ -9,13 +9,16 @@
 <html>
 <head>
     <title>Заказ</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<jsp:include page="header.html"/>
 <ul class="menu">
     <li><a href="main">Главная</a> </li>
     <li><a href="catalog">Каталог</a> </li>
-    <li><a href="product">Продукт</a> </li>
+
     <li><a href="cart">Корзина</a> </li>
     <li>Заказ</li></ul>
+<jsp:include page="footer.html"/>
 </body>
 </html>

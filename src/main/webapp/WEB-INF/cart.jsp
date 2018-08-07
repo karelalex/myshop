@@ -9,13 +9,15 @@
 <html>
 <head>
     <title>Корзина</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<jsp:include page="header.html"/>
 <ul class="menu">
     <li><a href="main">Главная</a> </li>
     <li><a href="catalog">Каталог</a> </li>
-    <li><a href="product">Продукт</a> </li>
     <li>Корзина </li>
     <li><a href="order">Заказ</a></li></ul>
+<jsp:include page="footer.html"/>
 </body>
 </html>
