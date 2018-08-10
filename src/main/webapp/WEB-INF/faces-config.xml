@@ -18,5 +18,13 @@
             <from-outcome>good-edit</from-outcome>
             <to-view-id>/good-edit.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>cat-list</from-outcome>
+            <to-view-id>/cat-list.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cat-edit</from-outcome>
+            <to-view-id>/cat-edit.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>

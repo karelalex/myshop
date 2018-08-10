@@ -3,7 +3,7 @@ package ru.naztrans.elcom.entity;
 import java.util.UUID;
 
 public class Category {
-    private String id;
+    private String id=UUID.randomUUID().toString();
     private String name;
     private String description;
 
