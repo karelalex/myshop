@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:metadata>
+    <f:viewParam name="id" value="#{goodEditController.id}" />
+    <f:viewAction action="#{goodEditController.init}" />
+</f:metadata>
+<h:body>
+    <h1><p:outputLabel value="Редактирование товара" /></h1>
+    <h:form>
+        <p:outputPanel>
+            <p:outputLabel value="Название" />
+        </p:outputPanel>
+        <p:outputPanel >
+            <p:inputText value="#{goodEditController.good.name}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+
+        <p:outputPanel>
+            <p:outputLabel value="Описание" />
+        </p:outputPanel>
+        <p:outputPanel  >
+            <p:inputText value="#{goodEditController.good.description}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+        <p:outputPanel>
+            <p:outputLabel value="Цена" />
+        </p:outputPanel>
+        <p:outputPanel  >
+            <p:inputText value="#{goodEditController.good.price}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+
+
+        <p:outputPanel>
+        <p:outputLabel for="cats" value="Категории  " />
+        <h:selectOneMenu id="cats" value="#{goodEditController.good.categoryID}">
+            <f:selectItems value="#{goodEditController.catList}" var="cat" itemValue="#{cat.id}" itemLabel="#{cat.name}" />
+        </h:selectOneMenu>
+        </p:outputPanel>
+
+        <p:outputPanel>
+            <p:commandButton value="SAVE" action="#{goodEditController.save}" />
+            <p:spacer width="20" />
+            <p:button value="Список товаров" outcome="goods-list">
+                <f:param name="a" value="1" />
+            </p:button>
+        </p:outputPanel>
+
+    </h:form>
+</h:body>
+</html>

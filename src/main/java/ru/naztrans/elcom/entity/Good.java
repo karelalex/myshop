@@ -1,5 +1,8 @@
 package ru.naztrans.elcom.entity;
 
+import ru.naztrans.elcom.dao.CategoryDAO;
+
+import javax.inject.Inject;
 import java.util.UUID;
 
 public class Good {
@@ -12,9 +15,20 @@ public class Good {
 
     }
 
+    public Good(String name, double price, String categoryID) {
+        this.name = name;
+        this.price = price;
+        this.categoryID=categoryID;
+    }
+
     public String getId() {
         return id;
     }
+
+
+
+   @Inject
+   private CategoryDAO cDAO;
 
     public void setId(String id) {
         this.id = id;
@@ -51,4 +65,8 @@ public class Good {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
+
+
 }

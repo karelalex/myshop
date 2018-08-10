@@ -3,12 +3,13 @@ package ru.naztrans.elcom.entity;
 import java.util.UUID;
 
 public class Category {
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private String name;
     private String description;
 
-    public Category(String name) {
+    public Category(String name, String id) {
         this.name = name;
+        this.id=id;
     }
 
     public Category(){}
