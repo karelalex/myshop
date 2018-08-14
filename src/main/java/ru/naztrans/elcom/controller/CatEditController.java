@@ -1,14 +1,11 @@
 package ru.naztrans.elcom.controller;
 
 import ru.naztrans.elcom.dao.CategoryDAO;
-import ru.naztrans.elcom.dao.GoodsDAO;
 import ru.naztrans.elcom.entity.Category;
-import ru.naztrans.elcom.entity.Good;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import java.util.Collection;
 
 @ViewScoped
 @ManagedBean

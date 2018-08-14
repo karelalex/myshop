@@ -1,11 +1,15 @@
 package ru.naztrans.elcom.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.UUID;
-
+@Entity
 public class Category {
+    @Id
     private String id=UUID.randomUUID().toString();
     private String name;
     private String description;
+
 
     public Category(String name, String id) {
         this.name = name;

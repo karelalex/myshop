@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
-    <persistence-unit name="example-persistence-unit" transaction-type="JTA">
+    <persistence-unit name="elcom-persistence-unit" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/EXAMPLE-DS</jta-data-source>
         <properties>
 
@@ -25,7 +25,7 @@
             <!--<property name="hibernate.use_sql_comments" value="true"/>-->
 
             <!--<property name="hibernate.cache.use_structured_entries" value="true"/>-->
-
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />-->
         </properties>
     </persistence-unit>
 

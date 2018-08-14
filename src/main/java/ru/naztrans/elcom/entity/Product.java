@@ -3,22 +3,29 @@ package ru.naztrans.elcom.entity;
 import ru.naztrans.elcom.dao.CategoryDAO;
 
 import javax.inject.Inject;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.UUID;
-
-public class Good {
+@Entity
+public class Product {
+    @Id
     private String id=UUID.randomUUID().toString();
-    private String categoryID;
+    @ManyToOne()
+    private Category category;
     private String name;
     private String description;
     private double price;
-    public Good(){
+    public Product(){
 
     }
 
-    public Good(String name, double price, String categoryID) {
-        this.name = name;
-        this.price = price;
-        this.categoryID=categoryID;
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getId() {
@@ -27,20 +34,13 @@ public class Good {
 
 
 
-   @Inject
-   private CategoryDAO cDAO;
+
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getCategoryID() {
-        return categoryID;
-    }
 
-    public void setCategoryID(String categoryID) {
-        this.categoryID = categoryID;
-    }
 
     public String getName() {
         return name;

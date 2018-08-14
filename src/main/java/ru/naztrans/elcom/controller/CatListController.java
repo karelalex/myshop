@@ -6,7 +6,9 @@ import ru.naztrans.elcom.entity.Category;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
+
 import java.util.Collection;
+
 
 @ViewScoped
 @ManagedBean

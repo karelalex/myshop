@@ -7,8 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <f:metadata>
-    <f:viewParam name="id" value="#{goodEditController.id}" />
-    <f:viewAction action="#{goodEditController.init}" />
+    <f:viewParam name="id" value="#{productEditController.pId}" />
+    <f:viewAction action="#{productEditController.init}" />
 </f:metadata>
 <h:body>
     <h1><p:outputLabel value="Редактирование товара" /></h1>
@@ -17,7 +17,7 @@
             <p:outputLabel value="Название" />
         </p:outputPanel>
         <p:outputPanel >
-            <p:inputText value="#{goodEditController.good.name}" />
+            <p:inputText value="#{productEditController.product.name}" />
         </p:outputPanel>
         <p:spacer height="20" />
 
@@ -25,30 +25,30 @@
             <p:outputLabel value="Описание" />
         </p:outputPanel>
         <p:outputPanel  >
-            <p:inputText value="#{goodEditController.good.description}" />
+            <p:inputText value="#{productEditController.product.description}" />
         </p:outputPanel>
         <p:spacer height="20" />
         <p:outputPanel>
             <p:outputLabel value="Цена" />
         </p:outputPanel>
         <p:outputPanel  >
-            <p:inputText value="#{goodEditController.good.price}" />
+            <p:inputText value="#{productEditController.product.price}" />
         </p:outputPanel>
         <p:spacer height="20" />
 
 
         <p:outputPanel>
         <p:outputLabel for="cats" value="Категории  " />
-        <h:selectOneMenu id="cats" value="#{goodEditController.good.categoryID}">
-            <f:selectItems value="#{goodEditController.catList}" var="cat" itemValue="#{cat.id}" itemLabel="#{cat.name}" />
+        <h:selectOneMenu id="cats" value="#{productEditController.catId}">
+            <f:selectItems value="#{productEditController.catList}" var="cat" itemValue="#{cat.id}" itemLabel="#{cat.name}" />
         </h:selectOneMenu>
         </p:outputPanel>
 
         <p:outputPanel>
-            <p:commandButton value="SAVE" action="#{goodEditController.save}" />
+            <p:commandButton value="SAVE" action="#{productEditController.save}" />
             <p:spacer width="20" />
-            <p:button value="Список товаров" outcome="goods-list">
-                <f:param name="a" value="1" />
+            <p:button value="Список товаров" outcome="products-list">
+
             </p:button>
         </p:outputPanel>
 

@@ -14,35 +14,35 @@
 
     </p:breadCrumb>
     <h:form>
-        <p:dataTable var="good" value="#{goodsListController.goodsList}" id="goodsTable">
+        <p:dataTable var="product" value="#{productListController.productList}" id="goodsTable">
             <p:column headerText="Название товара">
-                <h:outputText value="#{good.name}" />
+                <h:outputText value="#{product.name}" />
             </p:column>
 
             <p:column headerText="Описание">
-                <h:outputText value="#{good.description}" />
+                <h:outputText value="#{product.description}" />
             </p:column>
 
             <p:column headerText="Цена">
-                <h:outputText value="#{good.price}" />
+                <h:outputText value="#{product.price}" />
             </p:column>
 
             <p:column headerText="Категория">
-                <h:outputText value="#{goodsListController.getCategoryName(good.categoryID)}" />
+                <h:outputText value="#{product.category.name}" />
             </p:column>
             <p:column width="30">
-                <p:link outcome="good-edit">
+                <p:link outcome="product-edit">
                     <i class="fa fa-edit" style="font-size: 1.5em; margin: 5px;" />
-                    <f:param name="id" value="#{good.id}" />
+                    <f:param name="id" value="#{product.id}" />
                 </p:link>
             </p:column>
             <p:column width="30">
-                <p:commandLink update="goodsTable" actionListener="#{goodsListController.removeGoodByID(good.id)}">
+                <p:commandLink update="goodsTable" actionListener="#{productListController.removeProductByID(product.id)}">
                     <i class="fa fa-trash" style="font-size: 1.5em; margin: 5px;" />
                 </p:commandLink>
             </p:column>
         </p:dataTable>
-        <p:button value="Новый" outcome="good-edit">
+        <p:button value="Новый" outcome="product-edit">
 
         </p:button>
     </h:form>
