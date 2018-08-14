@@ -8,6 +8,11 @@
       xmlns:p="http://primefaces.org/ui" >
 <h:head></h:head>
 <h:body>
+    <p:breadCrumb>
+        <p:menuitem value="Товары" url="goods-list.xhtml" />
+        <p:menuitem value="Категории" url="cat-list.xhtml" />
+
+    </p:breadCrumb>
     <h:form>
         <p:dataTable var="good" value="#{goodsListController.goodsList}" id="goodsTable">
             <p:column headerText="Название товара">

@@ -9,6 +9,11 @@
 <h:head></h:head>
 <h:body>
     <h:form>
+        <p:breadCrumb>
+            <p:menuitem value="Товары" url="goods-list.xhtml" />
+            <p:menuitem value="Категории" url="cat-list.xhtml" />
+
+        </p:breadCrumb>
         <p:dataTable id="catTable" var="cat" value="#{catListController.catsList}">
             <p:column headerText="Название категории">
                 <h:outputText value="#{cat.name}" />
