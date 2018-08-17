@@ -14,17 +14,35 @@
     <h1><p:outputLabel value="Редактирование товара" /></h1>
     <h:form>
 
+        <p:outputPanel>
+            <p:outputLabel value="Название" />
+        </p:outputPanel>
+        <p:outputPanel >
+            <p:outputLabel value="#{clientProductController.product.name}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
 
+        <p:outputPanel>
+            <p:outputLabel value="Описание" />
+        </p:outputPanel>
+        <p:outputPanel  >
+            <p:outputLabel value="#{clientProductController.product.description}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+        <p:outputPanel>
+            <p:outputLabel value="Цена" />
+        </p:outputPanel>
+        <p:outputPanel  >
+            <p:outputLabel value="#{clientProductController.product.price}" />
+        </p:outputPanel>
 
 
 
 
         <p:outputPanel>
-            <p:commandButton value="ADD" action="#{productEditController.save}" />
+            <p:commandButton value="ADD" action="#{clientProductController.add()}" />
             <p:spacer width="20" />
-            <p:button value="Список товаров" outcome="products-list">
 
-            </p:button>
         </p:outputPanel>
 
     </h:form>

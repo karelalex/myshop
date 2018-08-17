@@ -30,13 +30,14 @@
             </p:column>
 
             <p:column headerText="Ссылка для просмотра и заказа товара ">
-                <h:outputText value="#{product.price}" />
+                <p:link outcome="show-product">
+                    показать
+                    <f:param name="id" value="#{product.id}" />
+                </p:link>
             </p:column>
 
         </p:dataTable>
-        <p:button value="Новый" outcome="product-edit">
 
-        </p:button>
     </h:form>
 </h:body>
 </html>

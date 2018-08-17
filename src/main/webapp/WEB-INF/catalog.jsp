@@ -18,7 +18,7 @@
     <li>Каталог </li>
 
     <li><a href="cart">Корзина</a> </li>
-    <li><a href="order">Заказ</a></li></ul>
+    <li><a href="zakaz">Заказ</a></li></ul>
 <div class="catalog_container">
     <div class="product-item"><a href="product?id=1"><img src="images/an_che.jpg" alt="">
         <p>Анатомия человека</p>

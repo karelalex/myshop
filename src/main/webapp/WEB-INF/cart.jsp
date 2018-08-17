@@ -17,7 +17,7 @@
     <li><a href="main">Главная</a> </li>
     <li><a href="catalog">Каталог</a> </li>
     <li>Корзина </li>
-    <li><a href="order">Заказ</a></li></ul>
+    <li><a href="zakaz">Заказ</a></li></ul>
 <jsp:include page="footer.html"/>
 </body>
 </html>

@@ -19,6 +19,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ducimus impedit quo soluta voluptas. Aut dolorem doloribus explicabo laboriosam laudantium obcaecati repellendus vero. Cum eveniet expedita praesentium quae sed sint!</p>
     </div>
     <li><a href="cart">Корзина</a> </li>
-    <li><a href="order">Заказ</a></li></ul>
+    <li><a href="zakaz">Заказ</a></li></ul>
 </body>
 </html>

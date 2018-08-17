@@ -2,6 +2,7 @@ package ru.naztrans.elcom.controller;
 
 import ru.naztrans.elcom.dao.ProductDAO;
 import ru.naztrans.elcom.entity.Product;
+import ru.naztrans.elcom.sessionbeans.Basket;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -23,8 +24,15 @@ public class ClientProductController {
 
     @Inject
     ProductDAO productDAO;
+    @Inject
+    Basket basket;
 
    public Product getProduct() {
        return productDAO.getProductById(productId);
+   }
+
+   public void add(){
+       basket.addProduct(productDAO.getProductById(productId), 1);
+
    }
 }

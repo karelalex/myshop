@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" >
+<h:head></h:head>
+<h:body>
+    <p:breadCrumb>
+        <p:menuitem value="Товары" url="goods-list.xhtml" />
+        <p:menuitem value="Категории" url="cat-list.xhtml" />
+
+    </p:breadCrumb>
+    <h:form>
+        <p:outputPanel>
+            <p:outputLabel value="Имя заказчика" />
+        </p:outputPanel>
+        <p:outputPanel >
+            <p:inputText value="#{showBasketController.zakaz.clientName}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+        <p:outputPanel>
+            <p:outputLabel value="Телефон" />
+        </p:outputPanel>
+        <p:outputPanel >
+            <p:inputText value="#{showBasketController.zakaz.clientPhone}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+        <p:outputPanel>
+            <p:outputLabel value="Адрес доставки" />
+        </p:outputPanel>
+        <p:outputPanel >
+            <p:inputTextarea value="#{showBasketController.zakaz.deliveryAddress}" />
+        </p:outputPanel>
+        <p:spacer height="20" />
+
+        <p:dataTable var="orderitem" value="#{showBasketController.zakaz.items}" id="goodsTable">
+            <p:column headerText="Название товара">
+                <h:outputText value="#{orderitem.product.name}" />
+            </p:column>
+            <p:column headerText="Цена">
+                <h:outputText value="#{orderitem.product.price}" />
+            </p:column>
+
+            <p:column headerText="Количество">
+                <h:outputText value="#{orderitem.count}" />
+            </p:column>
+       </p:dataTable>
+
+        <p:commandButton  value="Сделать заказ" action="#{showBasketController.makeOrder()}" />
+    </h:form>
+</h:body>
+</html>
