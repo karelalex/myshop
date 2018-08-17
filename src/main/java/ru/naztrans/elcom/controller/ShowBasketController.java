@@ -27,16 +27,17 @@ public class ShowBasketController {
         this.zakaz = zakaz;
     }
 
-    private Zakaz zakaz = basket.getBasket();
+    private Zakaz zakaz;
 
-    public String makeOrder(){
+    public void init() {
+        this.zakaz = basket.getBasket();
+    }
+
+    public String makeOrder() {
         zakaz.setDate(new Date());
         zakazDao.merge(zakaz);
         return "client-cat-list.xhtml";
     }
 
-    /*public Zakaz getContent(){
-        return basket.getBasket();
-    }
-*/
+
 }

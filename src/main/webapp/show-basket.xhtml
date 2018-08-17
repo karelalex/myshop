@@ -6,7 +6,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui" >
-<h:head></h:head>
+<h:head>
+
+</h:head>
+<f:metadata>
+    <f:viewAction action="#{showBasketController.init}" ></f:viewAction>
+</f:metadata>
 <h:body>
     <p:breadCrumb>
         <p:menuitem value="Товары" url="goods-list.xhtml" />

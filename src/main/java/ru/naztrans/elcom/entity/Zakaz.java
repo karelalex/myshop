@@ -1,6 +1,7 @@
 package ru.naztrans.elcom.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -66,7 +67,7 @@ public class Zakaz {
     @Column
     String deliveryAddress;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "zakaz", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<OrderItem> items;
+    List<OrderItem> items = new ArrayList<>();
     public Zakaz(){
 
     };
