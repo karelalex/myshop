@@ -1,8 +1,6 @@
 package ru.naztrans.elcom.controller;
 
-import ru.naztrans.elcom.dao.CategoryDAO;
-import ru.naztrans.elcom.dao.ProductsDAO;
-import ru.naztrans.elcom.entity.Category;
+import ru.naztrans.elcom.dao.ProductDAO;
 import ru.naztrans.elcom.entity.Product;
 
 import javax.faces.bean.ManagedBean;
@@ -14,14 +12,24 @@ import java.util.Collection;
 @ManagedBean
 public class ProductListController {
     @Inject
-    private ProductsDAO productsDAO;
+    private ProductDAO productDAO;
 
-
-    public Collection<Product> getProductList() {
-        return productsDAO.getProducts();
+    public String getCategoryId() {
+        return categoryId;
     }
 
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    private String categoryId;
+    public Collection<Product> getProductList() {
+        return productDAO.getProducts();
+    }
+
+    public Collection<Product> getProductListByCategoryId(String categoryID) {return productDAO.getProductFromCategory(categoryID);}
+
     public void removeProductByID(String productId) {
-        productsDAO.removeProductById(productId);
+        productDAO.removeProductById(productId);
     }
 }

@@ -1,14 +1,13 @@
 package ru.naztrans.elcom.controller;
 
 import ru.naztrans.elcom.dao.CategoryDAO;
-import ru.naztrans.elcom.dao.ProductsDAO;
+import ru.naztrans.elcom.dao.ProductDAO;
 import ru.naztrans.elcom.entity.Category;
 import ru.naztrans.elcom.entity.Product;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
-import java.util.Collection;
 import java.util.List;
 
 @ViewScoped
@@ -17,7 +16,7 @@ public class ProductEditController {
 
 
     @Inject
-    private ProductsDAO productsDAO;
+    private ProductDAO productDAO;
 
     @Inject
     private CategoryDAO categoryDAO;
@@ -61,7 +60,7 @@ public class ProductEditController {
     private Product product = new Product();
 
     public void init() {
-        final Product product = productsDAO.getProductById(pId);
+        final Product product = productDAO.getProductById(pId);
         if (product != null) this.product = product;
         catList=categoryDAO.getCategories();
     }
@@ -69,7 +68,7 @@ public class ProductEditController {
     public String save() {
         Category category= categoryDAO.getCatById(catId);
         this.product.setCategory(category);
-        productsDAO.merge(product);
+        productDAO.merge(product);
         return "products-list.xhtml";
     }
 
