@@ -18,7 +18,14 @@ public class Basket implements Serializable {
 
     public void addProduct(Product product, int count) {
         if (zakaz.getItems() == null) {
-            zakaz.setItems(new ArrayList<OrderItem>());
+            zakaz.setItems(new ArrayList<>());
+        }
+        for (OrderItem o: zakaz.getItems()){
+            if (o.getProduct().getId().equals(product.getId())){
+                count+=o.getCount();
+                o.setCount(count);
+                return;
+            }
         }
         OrderItem oi = new OrderItem();
         oi.setProduct(product);
