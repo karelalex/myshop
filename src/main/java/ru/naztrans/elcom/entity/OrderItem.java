@@ -14,9 +14,6 @@ public class OrderItem {
     @ManyToOne
     private Zakaz zakaz;
 
-    public String getId() {
-        return id;
-    }
     public Zakaz getZakaz() {
         return zakaz;
     }
@@ -24,9 +21,12 @@ public class OrderItem {
     public void setZakaz(Zakaz zakaz) {
         this.zakaz = zakaz;
     }
-    public void setId(String id) {
-        this.id = id;
+
+
+    public String getId() {
+        return id;
     }
+
 
     public int getCount() {
         return count;

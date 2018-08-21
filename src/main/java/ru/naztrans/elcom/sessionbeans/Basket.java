@@ -7,7 +7,7 @@ import ru.naztrans.elcom.entity.Product;
 
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.ArrayList;
+
 
 @SessionScoped
 public class Basket implements Serializable {
@@ -17,9 +17,6 @@ public class Basket implements Serializable {
     }
 
     public void addProduct(Product product, int count) {
-        if (zakaz.getItems() == null) {
-            zakaz.setItems(new ArrayList<>());
-        }
         for (OrderItem o: zakaz.getItems()){
             if (o.getProduct().getId().equals(product.getId())){
                 count+=o.getCount();
@@ -30,6 +27,7 @@ public class Basket implements Serializable {
         OrderItem oi = new OrderItem();
         oi.setProduct(product);
         oi.setCount(count);
+        oi.setZakaz(zakaz);
         zakaz.getItems().add(oi);
     }
 

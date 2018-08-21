@@ -13,6 +13,7 @@
     <f:viewAction action="#{showBasketController.init}" ></f:viewAction>
 </f:metadata>
 <h:body>
+
     <p:breadCrumb>
         <p:menuitem value="Товары" url="goods-list.xhtml" />
         <p:menuitem value="Категории" url="cat-list.xhtml" />
@@ -50,7 +51,9 @@
             </p:column>
 
             <p:column headerText="Количество">
-                <h:outputText value="#{orderitem.count}" />
+                <p:inputNumber value="#{orderitem.count}" minValue="0" decimalPlaces="0">
+
+                </p:inputNumber>
             </p:column>
        </p:dataTable>
 

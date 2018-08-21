@@ -67,7 +67,7 @@ public class Zakaz {
     @Column
     String deliveryAddress;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "zakaz", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<OrderItem> items = new ArrayList<>();
+    private List<OrderItem> items = new ArrayList<>();
     public Zakaz(){
 
     };
