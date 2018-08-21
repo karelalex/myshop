@@ -16,6 +16,8 @@ public class ProductDAO extends AbstractDAO{
         if(pId==null|| pId.isEmpty()) return null;
         return getEntity(em.createQuery("select e from Product e where e.id=:id", Product.class).setParameter("id", pId).setMaxResults(1));
     }
+
+    
     public List<Product> getProducts() {
         return em.createQuery("SELECT e FROM Product e ORDER BY e.name DESC", Product.class).getResultList();
     }
