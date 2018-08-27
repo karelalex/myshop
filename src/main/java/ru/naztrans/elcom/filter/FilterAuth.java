@@ -1,5 +1,9 @@
 package ru.naztrans.elcom.filter;
 
+import ru.naztrans.elcom.dto.SessionDTO;
+import ru.naztrans.elcom.security.SecurityService;
+
+import javax.faces.context.FacesContext;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
@@ -11,19 +15,31 @@ import java.io.IOException;
 public class FilterAuth implements Filter {
     public void destroy() {
     }
-
+    SessionDTO sessionDTO;
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest)req;
-        Cookie[] cookies = httpServletRequest.getCookies();
-        for (Cookie k: cookies
-             ) {
-            if("token".equals(k.getName())){
 
+
+
+        HttpServletRequest request = (HttpServletRequest) req;
+        Cookie[] cookies = request.getCookies();
+        if (cookies == null) return;
+        for (int i = 0; i < cookies.length; i++) {
+            if (cookies[i].getName().equals("token")) {
+
+                try {
+                    sessionDTO = SessionDTO.parse(cookies[i].getValue(), SecurityService.SECRET);
+                } catch (Exception e) {
+                    return;
+                }
             }
 
         }
-        HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
-        httpServletResponse.sendRedirect(req.getServletContext().getContextPath()+"/client-cat-list.xhtml");
+
+
+        if (!sessionDTO.hasRole("ADMIN")) {
+            HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
+            httpServletResponse.sendRedirect(req.getServletContext().getContextPath() + "/client-cat-list.xhtml");
+        }
         chain.doFilter(req, resp);
     }
 

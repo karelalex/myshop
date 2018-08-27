@@ -9,6 +9,13 @@
 h:body>
 <h1><p:outputLabel value="Создание пользователя" /></h1>
 <h:form>
+    <p:outputPanel>
+        <p:outputLabel value="Ваше Имя" />
+    </p:outputPanel>
+    <p:outputPanel >
+        <p:inputText value="#{createUserController.name}" />
+    </p:outputPanel>
+    <p:spacer height="20" />
 <p:outputPanel>
     <p:outputLabel value="LOGIN" />
 </p:outputPanel>
@@ -21,10 +28,10 @@ h:body>
     <p:outputLabel value="PASSWORD" />
 </p:outputPanel>
 <p:outputPanel  >
-    <p:inputText value="#{createUserController.pass}" />
+    <p:password value="#{createUserController.pass}" />
 </p:outputPanel>
 <p:outputPanel  >
-    <p:inputText value="#{createUserController.doublePass}" />
+    <p:password value="#{createUserController.doublePass}" />
 </p:outputPanel>
 <p:spacer height="20" />
 

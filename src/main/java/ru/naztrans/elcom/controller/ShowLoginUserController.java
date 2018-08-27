@@ -23,23 +23,22 @@ public class ShowLoginUserController {
     }
 
     private SessionDTO sessionDTO;
-    public void init(){
-    HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-     Cookie[] cookies = request.getCookies();
-     if (cookies==null) return;
-     for (int i=0; i<cookies.length; i++){
-         if (cookies[i].getName().equals("token")){
 
-             try {
-                 sessionDTO = SessionDTO.parse(cookies[i].getValue(), SecurityService.SECRET);
-             }
-             catch (Exception e)
-             {
-                 return;
-             }
-         }
+    public void init() {
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        Cookie[] cookies = request.getCookies();
+        if (cookies == null) return;
+        for (int i = 0; i < cookies.length; i++) {
+            if (cookies[i].getName().equals("token")) {
 
-     }
+                try {
+                    sessionDTO = SessionDTO.parse(cookies[i].getValue(), SecurityService.SECRET);
+                } catch (Exception e) {
+                    return;
+                }
+            }
+
+        }
 
     }
 }

@@ -8,16 +8,20 @@
 xmlns:p="http://primefaces.org/ui">
 <f:metadata>
     <f:viewAction action="#{showLoginUserController.init}" />
-    <f:param name="admin" value="ADMIN"></f:param>
+
 </f:metadata>
 <h:body>
     <p:outputPanel>
+        <p:outputLabel value="Логин" />
+    </p:outputPanel>
+    <p:outputPanel>
         <p:outputLabel value="#{showLoginUserController.sessionDTO.login}" />
     </p:outputPanel>
+    <p:repeat value="#{showLoginUserController.sessionDTO.roles}" var="roles">
     <p:outputPanel >
-        <p:outputLabel value="#{showLoginUserController.sessionDTO.hasRole(admin)}" />
+        <p:outputLabel value="#{roles}" />
     </p:outputPanel>
-    <p:spacer height="20" />
+    </p:repeat>
 
 </h:body>
 </html>
