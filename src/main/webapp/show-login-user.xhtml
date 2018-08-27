@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+<f:metadata>
+    <f:viewAction action="#{showLoginUserController.init}" />
+    <f:param name="admin" value="ADMIN"></f:param>
+</f:metadata>
+<h:body>
+    <p:outputPanel>
+        <p:outputLabel value="#{showLoginUserController.sessionDTO.login}" />
+    </p:outputPanel>
+    <p:outputPanel >
+        <p:outputLabel value="#{showLoginUserController.sessionDTO.hasRole(admin)}" />
+    </p:outputPanel>
+    <p:spacer height="20" />
+
+</h:body>
+</html>
